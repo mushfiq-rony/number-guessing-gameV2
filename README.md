@@ -11,7 +11,7 @@ This project aims to enhance a basic number guessing game by incorporating addit
      ```bash
      git clone https://github.dev/mushfiq-rony/number-guessing-gameV2
      ```
-   = run the "main.py" file in pycharm.
+   - run the "main.py" file in pycharm.
 
 2. **Original Requirements**
 
