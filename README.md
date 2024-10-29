@@ -1,4 +1,4 @@
-* Number Guessing Game V2 *
+# Number Guessing Game V2 
 
 ## Project Objective
 
