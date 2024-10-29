@@ -55,26 +55,25 @@ def play_game():
 
 
     while True:
-        correct_number = random.randint(1, 100) # select a random number between 1 and 100
-        guess_count = 0 # number of guess counting 
+        correct_number = random.randint(1, 100)
+        guess_count = 0
         print(f"Hi {player_name}, welcome to the guessing game!")
         print("\nI have picked a number between 1 and 100. Try to guess it!")
         print("You can type 'q' to quit at any time.")
 
         while True:
-            guess = input("What's your guess? (1-100, or 'q/Q' to quit): ") # input of the player name
+            guess = input("What's your guess? (1-100, or 'q/Q' to quit): ").lower()
 
             # Quit if the player enters 'q'
-            if guess.lower() == 'q':
+            if guess == 'q':
                 print(f"Thanks for playing, {player_name}. See you next time!")
                 return  # Exit the game loop
 
-            # Check if the input is a valid digit and within range of 1 and 100
-            if guess.isdigit() and 1 <= int(guess) <= 100:
+            # Check if the input is a valid digit and within range
+            if guess.isdigit() and 1 <= int(guess) <= 100: # ensures the guess is integer and between 1 and 100
                 guess = int(guess)  # Convert guess to integer
                 guess_count += 1
 
-                # starting the conditions of the game
                 if guess < correct_number:
                     print("Wrong. Guess higher!")
                 elif guess > correct_number:
@@ -89,16 +88,20 @@ def play_game():
 
         # Ask if the player wants to play again
         while True:
-            play_again = input("Do you want to play again? (yes/y or no/n): ").lower()
+            play_again = input("Do you want to play again? ('y' or 'n'(quit)): ").lower()
 
             # Check if the player wants to play again
-            if play_again in ['yes', 'y']:
+            if play_again in ['y']:
                 # Ask if the player is the same or a new one
-                same_player = input("If you are the same player then type 'yes'/'y'. Otherwise new players type 'no/n: ").lower()
-                if same_player in ['no', 'n']:
-                    player_name = input("What's your name? (Enter your name) ")
+                same_player = input("Are you the same player? ('y', 'n' or 'q'(quit the game): ").lower()
+                if same_player == 'q':
+                    print(f"Goodbye, {player_name}!")
+                    return  # Exit the game entirely
+                elif same_player in ['n']:
+                    player_name = input("What's your name? (Enter your name): ")
                 break  # Exit the input validation loop and start a new game
-            elif play_again in ['no', 'n']:
+                
+            elif play_again in ['n']: # exit the game if the player don't want to play.
                 print(f"Goodbye, {player_name}!")
                 return  # Exit the game entirely
             else:
