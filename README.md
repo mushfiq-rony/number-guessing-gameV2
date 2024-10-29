@@ -14,9 +14,9 @@ This project aims to enhance a basic number guessing game by incorporating addit
 1. **Clone the Original Game Repository**
    - Start by cloning the original number guessing game repository, which includes the basic functionality outlined below:
      ```bash
-     git clone <URL-of-original-repo>
-     cd <project-directory>
+     git clone https://github.dev/mushfiq-rony/number-guessing-gameV2
      ```
+   = run the "main.py" file in pycharm.
 
 2. **Original Requirements**
 
