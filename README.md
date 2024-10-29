@@ -1,9 +1,4 @@
----
-title: "Upgrade Your Number Guessing Game"
-author: "Md Mushfiqur Rahman"
-date: "October 28, 2024"
-output: github_document
----
+** Number Guessing Game V2**
 
 ## Project Objective
 
