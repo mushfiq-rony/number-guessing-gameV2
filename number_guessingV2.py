@@ -1,7 +1,7 @@
 import random
 
 # Function to read and return top 5 players from the file
-def read_top_players(file_name='topPlayersCopy.txt'):
+def read_top_players(file_name='topPlayers.txt'):
     top_players = []
     try:
         with open(file_name, 'r') as file:
@@ -17,7 +17,7 @@ def read_top_players(file_name='topPlayersCopy.txt'):
 
 
 # Function to update the top 5 players in the file
-def update_top_players(player_name, score, file_name='topPlayersCopy.txt'):
+def update_top_players(player_name, score, file_name='topPlayers.txt'):
     # Read existing players
     top_players = read_top_players(file_name)
     # Append the new player's score and name
@@ -39,7 +39,7 @@ def update_top_players(player_name, score, file_name='topPlayersCopy.txt'):
 
 
 # Function to display top players
-def display_top_players(file_name='topPlayersCopy.txt'):
+def display_top_players(file_name='topPlayers.txt'):
     top_players = read_top_players(file_name)
     if top_players:
         print("\nTop 5 Players:")
@@ -55,25 +55,26 @@ def play_game():
 
 
     while True:
-        correct_number = random.randint(1, 100)
-        guess_count = 0
+        correct_number = random.randint(1, 100) # select a random number between 1 and 100
+        guess_count = 0 # number of guess counting 
         print(f"Hi {player_name}, welcome to the guessing game!")
         print("\nI have picked a number between 1 and 100. Try to guess it!")
         print("You can type 'q' to quit at any time.")
 
         while True:
-            guess = input("What's your guess? (1-100, or 'q/Q' to quit): ")
+            guess = input("What's your guess? (1-100, or 'q/Q' to quit): ") # input of the player name
 
             # Quit if the player enters 'q'
             if guess.lower() == 'q':
                 print(f"Thanks for playing, {player_name}. See you next time!")
                 return  # Exit the game loop
 
-            # Check if the input is a valid digit and within range
+            # Check if the input is a valid digit and within range of 1 and 100
             if guess.isdigit() and 1 <= int(guess) <= 100:
                 guess = int(guess)  # Convert guess to integer
                 guess_count += 1
 
+                # starting the conditions of the game
                 if guess < correct_number:
                     print("Wrong. Guess higher!")
                 elif guess > correct_number:
