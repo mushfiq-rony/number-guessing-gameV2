@@ -94,7 +94,7 @@ def play_game():
             # Check if the player wants to play again
             if play_again in ['yes', 'y']:
                 # Ask if the player is the same or a new one
-                same_player = input("Are you the same player? (yes/y for same, no/n for new): ").lower()
+                same_player = input("If you are the same player then type 'yes'/'y'. Otherwise new players type 'no/n: ").lower()
                 if same_player in ['no', 'n']:
                     player_name = input("What's your name? (Enter your name) ")
                 break  # Exit the input validation loop and start a new game
